@@ -5,6 +5,7 @@ using Microsoft.AspNet.Mvc;
 
 namespace LogStore.DashBoard.Web.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public IActionResult Index()
