@@ -13,6 +13,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
 using LogStore.DashBoard.Web.Models;
+using Microsoft.AspNet.Mvc;
 
 namespace LogStore.DashBoard.Web
 {
@@ -41,7 +42,10 @@ namespace LogStore.DashBoard.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             // Add MVC services to the services container.
-            services.AddMvc();
+            services.AddMvc().Configure<MvcOptions>(o =>
+            {
+                o.Filters.Add(typeof (AuthorizeAttribute));
+            });
 
             // Uncomment the following line to add Web API servcies which makes it easier to port Web API 2 controllers.
             // You need to add Microsoft.AspNet.Mvc.WebApiCompatShim package to project.json
@@ -83,7 +87,7 @@ namespace LogStore.DashBoard.Web
                     name: "default",
                     template: "{controller}/{action}/{id?}",
                     defaults: new { controller = "Home", action = "Index" });
-
+                
                 // Uncomment the following line to add a route for porting Web API 2 controllers.
                 // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
             });
