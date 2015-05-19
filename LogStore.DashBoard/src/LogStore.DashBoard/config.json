@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "LogStore.DashBoard"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-LogStore.DashBoard-ce3ce97b-12ee-4bc7-ad90-4beba6605455;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
