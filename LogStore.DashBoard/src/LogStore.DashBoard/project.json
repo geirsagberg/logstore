@@ -1,4 +1,4 @@
-﻿{
+{
   "webroot": "wwwroot",
   "userSecretsId": "aspnet5-LogStore.DashBoard-ce3ce97b-12ee-4bc7-ad90-4beba6605455",
   "version": "1.0.0-*",
@@ -31,7 +31,7 @@
   "commands": {
     "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000",
     "gen": "Microsoft.Framework.CodeGeneration",
-    "ef":  "EntityFramework.Commands"
+    "ef": "EntityFramework.Commands"
   },
 
   "frameworks": {
@@ -39,20 +39,20 @@
     "dnxcore50": { }
   },
 
-  "exclude": [
-    "wwwroot",
-    "node_modules",
-    "bower_components"
-  ],
-  "publishExclude": [
-    "node_modules",
-    "bower_components",
-    "**.xproj",
-    "**.user",
-    "**.vspscc"
-  ],
-  "scripts": {
-    "postrestore": [ "npm install", "bower install" ],
-    "prepare": [ "gulp copy" ]
-  }
+    "exclude": [
+        "wwwroot",
+        "node_modules",
+        "bower_components"
+    ],
+    "publishExclude": [
+        "node_modules",
+        "bower_components",
+        "**.xproj",
+        "**.user",
+        "**.vspscc"
+    ],
+    "scripts": {
+        "postrestore": [ "npm install", "bower install" ],
+        "prepare": [ "gulp copy" ]
+    }
 }

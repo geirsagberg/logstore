@@ -1,16 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LogStore.DashBoard.Models;
+using LogStore.DashBoard.Services;
 using Microsoft.AspNet.Mvc;
+using System.Collections.Generic;
 
 namespace LogStore.DashBoard.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogService logService;
+
+        public HomeController(ILogService logService)
+        {
+            this.logService = logService;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var logs = logService.GetLogs();
+
+            var viewModel = new DashBoardViewModel(logs);
+
+            return View(viewModel);
         }
 
         public IActionResult About()

@@ -7,8 +7,8 @@ var gulp = require("gulp"),
 eval("var project = " + fs.readFileSync("./project.json"));
 
 var paths = {
-  bower: "./bower_components/",
-  lib: "./" + project.webroot + "/lib/"
+  bower: "bower_components/",
+  lib: project.webroot + "/lib/"
 };
 
 gulp.task("clean", function (cb) {
