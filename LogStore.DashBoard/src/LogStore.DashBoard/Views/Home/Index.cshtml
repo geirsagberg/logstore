@@ -5,14 +5,26 @@
 
 <div class="row">
     <table class="table">
+        <thead>
+            <tr>
+                <th>@nameof(LogEntry.Id)</th>
+                <th>@nameof(LogEntry.Time)</th>
+                <th>@nameof(LogEntry.LogLevel)</th>
+                <th>@nameof(LogEntry.AppId)</th>
+                <th>@nameof(LogEntry.Message)</th>
+            </tr>
+        </thead>
         <tbody>
             @foreach (var logEntry in Model.Logs)
             {
                 <tr>
+                    <td>@logEntry.Id</td>
+                    <td>@logEntry.Time</td>
+                    <td>@logEntry.LogLevel</td>
+                    <td>@logEntry.AppId</td>
                     <td>@logEntry.Message</td>
                 </tr>
             }
-
         </tbody>
     </table>
 </div>

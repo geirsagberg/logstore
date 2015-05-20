@@ -25,7 +25,8 @@
     "Microsoft.Framework.CodeGenerators.Mvc": "1.0.0-beta4",
     "Microsoft.Framework.Logging": "1.0.0-beta4",
     "Microsoft.Framework.Logging.Console": "1.0.0-beta4",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta4"
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta4",
+    "AutoFixture": "3.30.5"
   },
 
   "commands": {
@@ -35,24 +36,23 @@
   },
 
   "frameworks": {
-    "dnx451": { },
-    "dnxcore50": { }
+    "dnx451": { }
   },
 
-    "exclude": [
-        "wwwroot",
-        "node_modules",
-        "bower_components"
-    ],
-    "publishExclude": [
-        "node_modules",
-        "bower_components",
-        "**.xproj",
-        "**.user",
-        "**.vspscc"
-    ],
-    "scripts": {
-        "postrestore": [ "npm install", "bower install" ],
-        "prepare": [ "gulp copy" ]
-    }
+  "exclude": [
+    "wwwroot",
+    "node_modules",
+    "bower_components"
+  ],
+  "publishExclude": [
+    "node_modules",
+    "bower_components",
+    "**.xproj",
+    "**.user",
+    "**.vspscc"
+  ],
+  "scripts": {
+    "postrestore": [ "npm install", "bower install" ],
+    "prepare": [ "gulp copy" ]
+  }
 }

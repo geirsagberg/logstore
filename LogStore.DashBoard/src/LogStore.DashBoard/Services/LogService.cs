@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ploeh.AutoFixture;
 
 namespace LogStore.DashBoard.Services
 {
@@ -10,7 +11,8 @@ namespace LogStore.DashBoard.Services
     {
         public IEnumerable<LogEntry> GetLogs()
         {
-            return Enumerable.Range(0, 50).Select(_ => new LogEntry { Message = $"Logging {Guid.NewGuid()}" });
+            var fixture = new Fixture();
+            return Enumerable.Range(0, 50).Select(_ => fixture.Create<LogEntry>());
         }
 
     }
